@@ -6,7 +6,7 @@ This repository contains scripts to download and apply custom PowerShell aliases
 
 1. **Setting Execution Policy:**
    - Set the execution policy to allow running unsigned scripts for the current user by running:
-    ```powershell
+    ```
     Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Bypass
     ```
 
