@@ -31,7 +31,7 @@ Here is a documentation of all the aliases present in the Microsoft.PowerShell_p
 
 7. g: Sets the location to D:\Documents\Github.
 
-gcom: Adds all changes, commits with a message provided as an argument.
+8. gcom: Adds all changes, commits with a message provided as an argument.
 
 9. lazyg: Adds all changes, commits with a message provided as an argument, and pushes to the remote repository.
 
