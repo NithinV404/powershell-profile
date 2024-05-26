@@ -15,20 +15,40 @@ This repository contains scripts to download and apply custom PowerShell aliases
     ```
     irm https://raw.githubusercontent.com/NithinV404/powershell-profile/main/install.ps1 | iex
     ```
+Here is a documentation of all the aliases present in the Microsoft.PowerShell_profile.ps1 file:
 
-3. **Installing Starship using Scoop, Winget, or Choco if Installation Fails:**
-    - If the script fails to install Starship, use Scoop, Winget, or Choco commands to install it.
-    - To install Starship using Scoop, run:
-    ```
-    scoop install starship
-    ```
+1. cd...: Changes the current location to two levels up.
 
-    - To install Starship using Winget, run:
-    ```
-    winget install starship
-    ```
+2. cd....: Changes the current location to three levels up.
 
-    - To install Starship using Choco, run:
-    ```
-    choco install starship
-    ```
+3. md5: Calculates the MD5 hash of a file.
+
+4. sha1: Calculates the SHA1 hash of a file.
+
+5. sha256: Calculates the SHA256 hash of a file.
+
+6. ll: Lists all files in the current directory.
+
+7. g: Sets the location to D:\Documents\Github.
+
+gcom: Adds all changes, commits with a message provided as an argument.
+
+9. lazyg: Adds all changes, commits with a message provided as an argument, and pushes to the remote repository.
+
+10. reload: Reloads the PowerShell profile.
+
+11. grep: Searches for a specified regex pattern in files. If a directory is provided, it searches within that directory.
+
+12. touch: Creates an empty file at the specified path.
+
+13. Update-GitHubProfile: Downloads and updates the PowerShell profile from a specified URL.
+
+14. WeeklyGitHubUpdate: Scheduled job to run Update-GitHubProfile function every week.
+
+15. STARSHIP_CONFIG: Sets the Starship configuration file path.
+
+16. Invoke-Expression (& starship init powershell): Initializes Starship for PowerShell.
+
+17. Invoke-Expression (& { (zoxide init powershell | Out-String) }): Initializes zoxide for PowerShell.
+
+These aliases provide shortcuts and functionalities for common tasks and operations in PowerShell.
