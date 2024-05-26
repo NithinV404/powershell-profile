@@ -1,6 +1,7 @@
 Import-Module -Name Terminal-Icons
 Import-Module PSCompletions
 
+#Alias for powershell commands
 function cd... { Set-Location ..\.. }
 function cd.... { Set-Location ..\..\.. }
 function md5 { Get-FileHash -Algorithm MD5 $args }
@@ -17,7 +18,7 @@ function lazyg {
     git commit -m "$args"
     git push
 }
-function reload-profile {
+function reload{
     & $profile
 }
 function grep($regex, $dir) {
@@ -30,6 +31,13 @@ function grep($regex, $dir) {
 function touch($file) {
     "" | Out-File $file -Encoding ASCII
 }
+
+function Update-GitHubProfile {
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/NithinV404/powershell-profile/main/Microsoft.PowerShell_profile.ps1" -OutFile $PROFILE -Force
+}
+
+# Schedule the function to run every week
+Register-ScheduledJob -Name WeeklyGitHubUpdate -ScriptBlock { Update-GitHubProfile } -Trigger (New-JobTrigger -Weekly -At "Sunday 12:00 AM")
 
 $ENV:STARSHIP_CONFIG = "$env:USERPROFILE\Documents\Starship\config\starship.toml"
 Invoke-Expression (& starship init powershell)
